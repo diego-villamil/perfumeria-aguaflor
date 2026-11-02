@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agua Flor Perfumería · Perfumes originales</title>
+<meta name="description" content="Agua Flor Perfumería: perfumes originales para ella, para él y unisex. Elige tu fragancia y haz tu pedido por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#103B3A;
+  --deep-2:#0A2827;
+  --aqua:#CFE7E2;
+  --aqua-2:#E8F3F0;
+  --petal:#F4D9D3;
+  --gold:#A8823A;
+  --ink:#16201F;
+  --ink-soft:#5D6B69;
+  --line:#DCE6E3;
+  --bg:#FAFBF9;
+  --surface:#FFFFFF;
+  --sale:#B33A4C;
+  --on-deep:#FFFFFF;
+  --shadow:0 24px 50px -30px rgba(16,59,58,.55);
+  --serif:"Cormorant","Cormorant Garamond",Georgia,serif;
+  --sans:"Manrope","Segoe UI",system-ui,sans-serif;
+  --max:1240px;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --deep:#7CC7BC;--deep-2:#5FAEA3;--aqua:#173332;--aqua-2:#132A29;--petal:#3A2A29;--gold:#D9B26A;--ink:#EAF2F0;--ink-soft:#A9BAB7;
+    --line:#2A3D3C;--bg:#0F1A1A;--surface:#152322;--sale:#EF7F90;--on-deep:#0F1A1A;--shadow:0 24px 50px -30px rgba(0,0,0,.85);color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --deep:#7CC7BC;--deep-2:#5FAEA3;--aqua:#173332;--aqua-2:#132A29;--petal:#3A2A29;--gold:#D9B26A;--ink:#EAF2F0;--ink-soft:#A9BAB7;
+  --line:#2A3D3C;--bg:#0F1A1A;--surface:#152322;--sale:#EF7F90;--on-deep:#0F1A1A;--shadow:0 24px 50px -30px rgba(0,0,0,.85);color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--deep);outline-offset:3px;border-radius:2px}
+.wrap{width:min(var(--max),100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.05;margin:0}
+h2{font-size:clamp(2.2rem,4.4vw,3.4rem)}
+p{margin:0}
+.muted{color:var(--ink-soft)}
+.price{font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.demo-strip{background:var(--deep-2);color:#E8F3F0;font-size:.8rem;text-align:center;padding:.45rem 1rem}
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.site-header .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:76px;gap:1rem}
+.logo{justify-self:center;text-decoration:none;text-align:center;line-height:1}
+.logo b{font-family:var(--serif);font-weight:600;font-size:2rem;letter-spacing:.04em;display:block}
+.logo small{font-size:.64rem;letter-spacing:.42em;color:var(--ink-soft);text-transform:uppercase;display:block;margin-top:.25rem;padding-left:.42em}
+.nav-links{list-style:none;margin:0;padding:0;display:flex;gap:1.8rem}
+.nav-links a{text-decoration:none;font-size:.94rem;color:var(--ink-soft);padding:.3rem 0;position:relative}
+.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--ink)}
+.nav-links a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--gold)}
+.head-actions{justify-self:end;display:flex;gap:.4rem;align-items:center}
+.icon-btn{position:relative;border:0;background:none;width:44px;height:44px;display:grid;place-items:center;cursor:pointer;border-radius:50%}
+.icon-btn:hover{background:var(--aqua-2)}
+.icon-btn svg{width:23px;height:23px;stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.badge{position:absolute;top:4px;right:2px;min-width:19px;height:19px;border-radius:10px;background:var(--deep);color:var(--on-deep);font-size:.72rem;font-weight:600;display:grid;place-items:center;padding:0 5px}
+.badge[hidden]{display:none}
+.menu-toggle{display:none}
+@media (max-width:860px){
+  .site-header .wrap{grid-template-columns:auto 1fr auto;height:66px}
+  .logo b{font-size:1.6rem}.logo small{font-size:.56rem}
+  .menu-toggle{display:grid}
+  .nav-links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:.4rem 1.25rem 1rem;box-shadow:var(--shadow)}
+  .nav-links.open{display:flex}
+  .nav-links a{display:block;padding:.9rem 0;font-size:1.08rem;border-bottom:1px solid var(--line)}
+  .nav-links a[aria-current="page"]::after{display:none}
+  .nav-links a[aria-current="page"]{color:var(--deep)}
+}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;border:1px solid transparent;border-radius:2px;padding:.9rem 1.6rem;font-weight:500;font-size:.95rem;letter-spacing:.02em;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-deep{background:var(--deep);color:var(--on-deep)}
+.btn-deep:hover{background:var(--deep-2)}
+.btn-line{border-color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:var(--bg)}
+.btn-wa{background:#1FA855;color:#fff}
+.btn-wa:hover{background:#178a45}
+.btn-block{width:100%}
+
+.page{display:none}
+.page.is-active{display:block}
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:2.2rem;flex-wrap:wrap}
+.link-more{color:var(--deep);font-weight:500;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px;font-size:.95rem}
+
+/* hero */
+.hero{background:var(--aqua);padding:0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;min-height:min(80vh,640px)}
+.hero-copy{padding:3.5rem 2rem 3.5rem max(1.25rem,calc((100vw - var(--max))/2));display:flex;flex-direction:column;gap:1.5rem}
+.hero h1{font-size:clamp(3.2rem,7vw,6rem);line-height:.92;font-weight:500}
+.hero h1 i{display:block;color:var(--deep);font-style:italic}
+.hero-copy>p{font-size:1.08rem;max-width:40ch;color:var(--ink-soft)}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-art{position:relative;height:100%;min-height:440px;background:var(--aqua)}
+.hero-art svg{position:absolute;inset:0;width:100%;height:100%}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.hero-art{min-height:300px;order:-1}.hero-copy{padding:2.4rem 1.25rem 3rem}}
+@media (prefers-reduced-motion:no-preference){
+  .floaty{animation:float 6s ease-in-out infinite alternate}
+  .floaty:nth-of-type(2){animation-delay:-2s}.floaty:nth-of-type(3){animation-delay:-4s}
+  .petal{animation:drift 9s ease-in-out infinite alternate}
+}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+@keyframes drift{from{transform:translate(0,0) rotate(0)}to{transform:translate(12px,8px) rotate(18deg)}}
+
+.trust{border-bottom:1px solid var(--line);padding:1.3rem 0}
+.trust ul{list-style:none;margin:0;padding:0;display:flex;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap}
+.trust li{display:flex;align-items:center;gap:.7rem;font-size:.94rem}
+.trust svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* families */
+.families{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.fam{text-decoration:none;padding:1.6rem 1.4rem 1.4rem;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:.5rem;transition:border-color .2s}
+.fam:hover{border-color:var(--deep)}
+.fam .drop{width:46px;height:46px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);margin-bottom:.6rem}
+.fam h3{font-size:1.65rem}
+.fam p{font-size:.9rem;color:var(--ink-soft)}
+@media (max-width:900px){.families{grid-template-columns:1fr 1fr}}
+
+/* gender tiles */
+.genders{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.gender{position:relative;text-decoration:none;aspect-ratio:4/5;overflow:hidden;display:block}
+.gender svg{width:100%;height:100%;transition:transform .6s}
+.gender:hover svg{transform:scale(1.04)}
+.gender span{position:absolute;left:1.2rem;bottom:1.1rem;font-family:var(--serif);font-size:2rem;color:var(--ink)}
+@media (max-width:700px){.genders{grid-template-columns:1fr 1fr}.genders .gender:last-child{grid-column:span 2;aspect-ratio:2/1}}
+
+/* product grid */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2.2rem 1.2rem}
+@media (max-width:980px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.grid{grid-template-columns:repeat(2,1fr);gap:1.6rem .8rem}}
+.card{display:flex;flex-direction:column;gap:.4rem}
+.card-img{position:relative;border:0;padding:0;background:none;cursor:pointer;overflow:hidden;aspect-ratio:4/5}
+.card-img svg{width:100%;height:100%;transition:transform .5s}
+.card-img,.pd-art,.line .thumb{position:relative}
+.gender .photo{padding-bottom:12%}
+.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#fff}
+.card-img:hover svg{transform:scale(1.04)}
+.tag{position:absolute;top:.7rem;left:.7rem;font-size:.72rem;font-weight:600;padding:.25rem .6rem;background:var(--surface);color:var(--ink);letter-spacing:.03em}
+.tag.sale{background:var(--sale);color:#fff}
+.card-brand{font-size:.78rem;color:var(--ink-soft);letter-spacing:.06em}
+.card-name{font-family:var(--serif);font-size:1.4rem;line-height:1.1;background:none;border:0;padding:0;text-align:left;cursor:pointer}
+.card-notes{font-size:.84rem;color:var(--ink-soft)}
+.card-meta{display:flex;align-items:baseline;gap:.6rem;font-size:.98rem;margin-top:.15rem}
+.old{text-decoration:line-through;color:var(--ink-soft);font-size:.86rem}
+.now-sale{color:var(--sale);font-weight:600}
+
+/* dark band */
+.band{background:var(--deep-2);color:#E8F3F0}
+.band .muted{color:#A9C4BF}
+.band-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.band h2{color:#fff}
+.band ol{list-style:none;margin:0;padding:0;display:grid;gap:1.4rem;counter-reset:s}
+.band li{counter-increment:s;display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start}
+.band li::before{content:counter(s);font-family:var(--serif);font-size:2.2rem;line-height:1;color:#D9B26A;width:1.4ch}
+.band li b{display:block;font-weight:600;margin-bottom:.2rem;color:#fff}
+@media (max-width:800px){.band-grid{grid-template-columns:1fr}}
+:root[data-theme="dark"] .band{background:#0A1514}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .band{background:#0A1514}}
+
+/* shop */
+.page-title{padding:clamp(2.8rem,6vw,4.5rem) 0 1.6rem;border-bottom:1px solid var(--line)}
+.page-title h1{font-size:clamp(2.8rem,6vw,4.6rem)}
+.page-title p{margin-top:.5rem}
+.toolbar{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;padding:1.4rem 0 2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{border:1px solid var(--line);background:var(--surface);padding:.5rem 1rem;cursor:pointer;font-size:.9rem}
+.chip[aria-pressed="true"]{background:var(--deep);color:var(--on-deep);border-color:var(--deep)}
+.tools{display:flex;gap:.6rem;flex-wrap:wrap}
+.field{font:inherit;font-size:.93rem;color:var(--ink);background:var(--surface);border:1px solid var(--line);padding:.6rem .9rem}
+.field:focus{outline:none;border-color:var(--deep)}
+.empty{padding:3rem 0;text-align:center;color:var(--ink-soft)}
+
+.policy{max-width:760px}
+.policy h2{font-size:2rem;margin:2.4rem 0 .8rem}
+.policy h2:first-child{margin-top:0}
+.policy p,.policy li{color:var(--ink-soft)}
+.policy ul{padding-left:1.2rem;margin:.6rem 0 0}
+
+footer{background:var(--deep-2);color:#E8F3F0;padding:3.5rem 0 2.5rem}
+.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem}
+.foot .logo{justify-self:start;text-align:left}
+.foot .logo small{color:#A9C4BF;padding-left:0}
+.foot p,.foot a{color:#A9C4BF;font-size:.9rem;text-decoration:none}
+.foot a:hover{color:#fff}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+.foot h3{font-family:var(--sans);font-size:.92rem;font-weight:600;margin-bottom:.7rem;color:#fff}
+@media (max-width:760px){.foot{grid-template-columns:1fr}}
+:root[data-theme="dark"] footer{background:#0A1514}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer{background:#0A1514}}
+
+/* dialogs */
+dialog{border:0;padding:0;color:var(--ink);background:var(--bg)}
+dialog::backdrop{background:rgba(8,24,23,.55)}
+.pd{width:min(980px,100vw - 2rem);max-height:calc(100vh - 2rem);overflow:auto}
+.pd-grid{display:grid;grid-template-columns:1fr 1fr}
+.pd-art{min-height:100%}
+.pd-art svg{width:100%;height:100%}
+.pd-body{padding:2.4rem 2.2rem;display:flex;flex-direction:column;gap:1.1rem;position:relative}
+.pd-body h2{font-size:clamp(2.2rem,3.6vw,3rem);padding-right:2.5rem}
+.pd-price{font-size:1.35rem;display:flex;gap:.8rem;align-items:baseline}
+.pyramid{display:grid;gap:.5rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1rem 0}
+.pyramid div{display:grid;grid-template-columns:90px 1fr;gap:.8rem;font-size:.92rem}
+.pyramid dt,.pyramid span{color:var(--ink-soft)}
+.opt-label{font-size:.86rem;font-weight:500;margin-bottom:.5rem;display:block}
+.sizes{display:flex;gap:.55rem;flex-wrap:wrap}
+.size{min-width:84px;height:46px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:500;padding:0 .9rem}
+.size[aria-checked="true"]{background:var(--deep);color:var(--on-deep);border-color:var(--deep)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);overflow:hidden}
+.qty button{width:40px;height:40px;border:0;background:none;cursor:pointer;font-size:1.15rem}
+.qty span{min-width:32px;text-align:center;font-variant-numeric:tabular-nums}
+.pd-note{font-size:.86rem;color:var(--ink-soft)}
+.pd-err{color:var(--sale);font-size:.9rem;min-height:1.2em;font-weight:500}
+.x{position:absolute;top:1rem;right:1rem;width:42px;height:42px;border:0;border-radius:50%;background:var(--aqua-2);cursor:pointer;display:grid;place-items:center}
+.x svg{width:18px;height:18px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+@media (max-width:760px){.pd-grid{grid-template-columns:1fr}.pd-art{aspect-ratio:1}.pd-body{padding:1.6rem 1.25rem 2rem}}
+
+.cart{margin:0 0 0 auto;height:100vh;max-height:100vh;width:min(440px,100vw);display:none;flex-direction:column}
+.cart[open]{display:flex}
+.cart-head{display:flex;justify-content:space-between;align-items:center;padding:calc(1.2rem + env(safe-area-inset-top,0px)) 1.4rem 1.2rem;border-bottom:1px solid var(--line)}
+.cart-head h2{font-size:2rem}
+.cart-head .x{position:static}
+.cart-body{flex:1;overflow:auto;padding:1rem 1.4rem}
+.line{display:grid;grid-template-columns:72px 1fr auto;gap:.9rem;padding:1rem 0;border-bottom:1px solid var(--line);align-items:start}
+.line .thumb{overflow:hidden;aspect-ratio:4/5}
+.line h3{font-family:var(--sans);font-size:.96rem;font-weight:600}
+.line small{color:var(--ink-soft);display:block}
+.line .rm{display:block;border:0;background:none;color:var(--ink-soft);cursor:pointer;font-size:.84rem;text-decoration:underline;padding:0;margin-top:.4rem}
+.line .qty button{width:32px;height:32px}
+.cart-foot{border-top:1px solid var(--line);padding:1.2rem 1.4rem calc(1.2rem + env(safe-area-inset-bottom,0px));display:grid;gap:.8rem;background:var(--surface)}
+.total{display:flex;justify-content:space-between;font-size:1.12rem;font-weight:600}
+.cart-foot label{display:grid;gap:.3rem;font-size:.84rem;font-weight:500}
+.cart-foot input,.cart-foot select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:.65rem .8rem;font-size:.94rem}
+.cart-foot input:focus,.cart-foot select:focus{outline:none;border-color:var(--deep)}
+.cart-empty{text-align:center;padding:3rem 1rem;color:var(--ink-soft);display:grid;gap:1rem;justify-items:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+
+.toast{position:fixed;left:50%;bottom:calc(1.4rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,250%);visibility:hidden;background:var(--ink);color:var(--bg);padding:.8rem 1.3rem;font-size:.92rem;z-index:80;transition:transform .35s;display:flex;gap:.8rem;align-items:center}
+.toast.show{transform:translate(-50%,0);visibility:visible}
+.toast button{border:0;background:none;color:var(--bg);text-decoration:underline;cursor:pointer;padding:0}
+.wa-float{position:fixed;right:1.1rem;bottom:calc(1.1rem + env(safe-area-inset-bottom,0px));z-index:70;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.45)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+<div class="demo-strip">Demo de tienda en línea para Agua Flor Perfumería · precios de referencia</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav aria-label="Principal">
+      <button class="icon-btn menu-toggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Abrir menú"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" data-nav="inicio">Inicio</a></li>
+        <li><a href="#tienda" data-nav="tienda">Perfumes</a></li>
+        <li><a href="#como-comprar" data-nav="como-comprar">Cómo comprar</a></li>
+      </ul>
+    </nav>
+    <a class="logo" href="#inicio" aria-label="Agua Flor Perfumería, inicio"><b>Agua Flor</b><small>Perfumería</small></a>
+    <div class="head-actions">
+      <a class="icon-btn" href="#tienda" aria-label="Buscar perfume" data-focus-search><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg></a>
+      <button class="icon-btn" type="button" id="openCart" aria-label="Abrir bolsa de compras"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg><span class="badge" id="cartCount" hidden>0</span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- INICIO -->
+<div class="page" data-page="inicio" data-title="Agua Flor Perfumería · Perfumes originales">
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1>Encuentra tu <i>aroma.</i></h1>
+        <p>Perfumes 100 % originales para ella, para él y unisex. Elige tu fragancia y recíbela en casa.</p>
+        <div class="hero-actions">
+          <a class="btn btn-deep" href="#tienda">Ver perfumes</a>
+          <a class="btn btn-line" href="#tienda" data-filter="Ofertas">Ofertas de la semana</a>
+        </div>
+      </div>
+      <div class="hero-art" id="heroArt" role="img" aria-label="Frascos de perfume sobre un pedestal con pétalos"></div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="wrap"><ul>
+      <li><svg viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.2 3 7.6 7 9 4-1.4 7-4.8 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Perfumes 100 % originales</li>
+      <li><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>Envíos a toda Colombia</li>
+      <li><svg viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11"/><path d="M4 13h16M12 9v11M12 9c-1.5-3-5-3-5-1 0 1 2.5 1 5 1 2.5 0 5 0 5-1 0-2-3.5-2-5 1"/></svg>Listos para regalar</li>
+      <li><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.8A8 8 0 1 1 8 19z"/></svg>Asesoría por WhatsApp</li>
+    </ul></div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2>¿Para quién es?</h2></div>
+      <div class="genders" id="genders"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2>Los más vendidos</h2><a class="link-more" href="#tienda">Ver todos los perfumes</a></div>
+      <div class="grid" id="bestList"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2>Elige por familia olfativa</h2><p class="muted" style="max-width:44ch">¿No sabes qué perfume elegir? Empieza por el tipo de aroma que más te gusta.</p></div>
+      <div class="families" id="families"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap band-grid">
+      <div><h2>Comprar es así de fácil</h2><p class="muted" style="margin-top:1rem;max-width:40ch">Sin registros ni pagos en línea: armas tu pedido aquí y lo confirmamos contigo por WhatsApp.</p><div style="margin-top:1.8rem"><a class="btn btn-wa" href="#" data-wa-general>Escríbenos por WhatsApp</a></div></div>
+      <ol>
+        <li><div><b>Elige tus perfumes</b>Agrega a la bolsa la fragancia y la presentación que quieres.</div></li>
+        <li><div><b>Envía tu pedido</b>Tu pedido llega a nuestro WhatsApp con el detalle y el total.</div></li>
+        <li><div><b>Confirma y paga</b>Te compartimos los medios de pago y el valor del envío.</div></li>
+        <li><div><b>Recibe en casa</b>Despachamos a cualquier ciudad de Colombia.</div></li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<!-- TIENDA -->
+<div class="page" data-page="tienda" data-title="Perfumes · Agua Flor Perfumería">
+  <div class="wrap">
+    <div class="page-title"><h1>Perfumes</h1><p class="muted">Todas nuestras fragancias son originales. Elige, agrega a tu bolsa y pide por WhatsApp.</p></div>
+    <div class="toolbar">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar perfumes"></div>
+      <div class="tools">
+        <input class="field" type="search" id="search" placeholder="Buscar perfume o nota" aria-label="Buscar perfume o nota">
+        <select class="field" id="fam" aria-label="Familia olfativa"><option value="">Todas las familias</option></select>
+        <select class="field" id="sort" aria-label="Ordenar"><option value="rel">Destacados</option><option value="asc">Precio: menor a mayor</option><option value="desc">Precio: mayor a menor</option></select>
+      </div>
+    </div>
+    <div class="grid" id="shopList"></div>
+    <p class="empty" id="shopEmpty" hidden>No encontramos perfumes con esa búsqueda. Prueba con otra nota, como «vainilla» o «cítrico».</p>
+    <div style="height:4rem"></div>
+  </div>
+</div>
+
+<!-- COMO COMPRAR -->
+<div class="page" data-page="como-comprar" data-title="Cómo comprar · Agua Flor Perfumería">
+  <div class="wrap">
+    <div class="page-title"><h1>Cómo comprar</h1><p class="muted">Texto de ejemplo para la demo: se reemplaza por las condiciones reales de la tienda.</p></div>
+    <section style="padding-top:2.4rem">
+      <div class="policy">
+        <h2>Pedidos</h2>
+        <ul><li>Agrega tus perfumes a la bolsa y elige la presentación.</li><li>Envía el pedido por WhatsApp; confirmamos disponibilidad y te compartimos los medios de pago.</li><li>Cuando el pago se confirma, despachamos tu pedido.</li></ul>
+        <h2>Envíos</h2>
+        <p>Enviamos a toda Colombia por transportadora. El valor y el tiempo de entrega dependen de la ciudad y se confirman por WhatsApp.</p>
+        <h2>Originalidad garantizada</h2>
+        <p>Todos nuestros perfumes son originales y se entregan sellados en su empaque. Si tienes dudas sobre una referencia, escríbenos antes de comprar.</p>
+        <h2>Cambios</h2>
+        <p>Por higiene, los perfumes abiertos no tienen cambio. Si tu pedido llega con algún daño, avísanos el mismo día de la entrega con fotos del paquete.</p>
+      </div>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><span class="logo"><b>Agua Flor</b><small>Perfumería</small></span><p style="margin-top:1rem;max-width:34ch">Perfumes originales para cada momento, con envíos a toda Colombia.</p></div>
+    <div><h3>Perfumes</h3><ul><li><a href="#tienda" data-filter="Para ella">Para ella</a></li><li><a href="#tienda" data-filter="Para él">Para él</a></li><li><a href="#tienda" data-filter="Unisex">Unisex</a></li><li><a href="#tienda" data-filter="Ofertas">Ofertas</a></li></ul></div>
+    <div><h3>Ayuda</h3><ul><li><a href="#como-comprar">Cómo comprar</a></li><li><a href="#" data-wa-general>WhatsApp</a></li></ul></div>
+  </div>
+</footer>
+
+<a class="wa-float" href="#" data-wa-general aria-label="Escribir por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C9 3 3.3 8.7 3.3 15.72c0 2.25.6 4.45 1.72 6.38L3.2 28.8l6.88-1.8a12.7 12.7 0 0 0 5.95 1.5h.01c7.03 0 12.74-5.7 12.74-12.73 0-3.4-1.33-6.6-3.73-9A12.66 12.66 0 0 0 16.04 3zm0 23.3h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.08 1.07 1.09-3.98-.25-.41a10.56 10.56 0 0 1-1.62-5.55c0-5.85 4.76-10.6 10.62-10.6 2.84 0 5.5 1.1 7.5 3.11a10.53 10.53 0 0 1 3.1 7.5c0 5.85-4.76 10.6-10.56 10.6zm5.82-7.94c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.56-1.58a9.6 9.6 0 0 1-1.77-2.2c-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.71-1.71-.98-2.34-.26-.62-.52-.53-.71-.54h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.65 0 1.56 1.14 3.07 1.3 3.28.16.21 2.24 3.42 5.43 4.8.76.33 1.35.52 1.81.67.76.24 1.45.2 2 .12.61-.09 1.88-.77 2.14-1.51.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37z"/></svg></a>
+
+<dialog class="pd" id="pd" aria-labelledby="pdName">
+  <div class="pd-grid">
+    <div class="pd-art" id="pdArt"></div>
+    <div class="pd-body">
+      <button class="x" type="button" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <p id="pdBrand" style="font-weight:600;letter-spacing:.04em"></p><p class="muted" id="pdMeta" style="margin-top:-.8rem"></p>
+      <h2 id="pdName"></h2>
+      <div class="pd-price" id="pdPrice"></div>
+      <p class="muted" id="pdDesc"></p>
+      <dl class="pyramid" id="pdNotes" style="margin:0"></dl>
+      <div><span class="opt-label" id="pdSizeLabel">Presentación</span><div class="sizes" id="pdSizes" role="radiogroup" aria-labelledby="pdSizeLabel"></div></div>
+      <div><span class="opt-label">Cantidad</span><div class="qty"><button type="button" id="qMinus" aria-label="Quitar una">−</button><span id="qVal">1</span><button type="button" id="qPlus" aria-label="Agregar una">+</button></div></div>
+      <p class="pd-err" id="pdErr" role="alert"></p>
+      <div><button class="btn btn-deep" type="button" id="addBtn">Agregar a la bolsa</button></div>
+      <p class="pd-note">Perfume original, sellado. ¿Dudas con la fragancia? Escríbenos y te asesoramos.</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="cart" id="cart" aria-labelledby="cartTitle">
+  <div class="cart-head"><h2 id="cartTitle">Tu bolsa</h2><button class="x" type="button" data-close aria-label="Cerrar bolsa"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="cart-body" id="cartBody"></div>
+  <form class="cart-foot" id="checkout" novalidate>
+    <div class="total"><span>Total</span><span class="price" id="cartTotal">$0</span></div>
+    <label>Tu nombre<input name="nombre" autocomplete="name" required></label>
+    <div class="two">
+      <label>Ciudad<input name="ciudad" autocomplete="address-level2" placeholder="Ej. Barranquilla"></label>
+      <label>¿Es para regalo?<select name="regalo"><option>No</option><option>Sí, con empaque de regalo</option></select></label>
+    </div>
+    <p class="pd-err" id="coErr" role="alert"></p>
+    <button class="btn btn-wa btn-block" type="submit"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.04 3C9 3 3.3 8.7 3.3 15.72c0 2.25.6 4.45 1.72 6.38L3.2 28.8l6.88-1.8a12.7 12.7 0 0 0 5.95 1.5h.01c7.03 0 12.74-5.7 12.74-12.73 0-3.4-1.33-6.6-3.73-9A12.66 12.66 0 0 0 16.04 3zm0 23.3h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.08 1.07 1.09-3.98-.25-.41a10.56 10.56 0 0 1-1.62-5.55c0-5.85 4.76-10.6 10.62-10.6 2.84 0 5.5 1.1 7.5 3.11a10.53 10.53 0 0 1 3.1 7.5c0 5.85-4.76 10.6-10.56 10.6zm5.82-7.94c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.19.21-.37.24-.69.08-.32-.16-1.35-.5-2.56-1.58a9.6 9.6 0 0 1-1.77-2.2c-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.1-.21.05-.4-.03-.56-.08-.16-.71-1.71-.98-2.34-.26-.62-.52-.53-.71-.54h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.65 0 1.56 1.14 3.07 1.3 3.28.16.21 2.24 3.42 5.43 4.8.76.33 1.35.52 1.81.67.76.24 1.45.2 2 .12.61-.09 1.88-.77 2.14-1.51.27-.74.27-1.38.19-1.51-.08-.13-.29-.21-.61-.37z"/></svg>Enviar pedido por WhatsApp</button>
+    <p class="pd-note" style="text-align:center">El valor del envío se confirma según tu ciudad.</p>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><span id="toastMsg"></span><button type="button" id="toastBtn">Ver bolsa</button></div>
+
+<script>
+(function(){
+  /* ===== CONFIGURACIÓN ===== */
+  // Número que recibe los pedidos (formato internacional sin +). Cambiar por el WhatsApp de Agua Flor.
+  var WHATSAPP = "573242051482";
+  var IMGS = window.AF_IMGS || {}; // solo para la vista previa publicada (fotos embebidas)
+  var STORE = "Agua Flor";
+
+  // Familias olfativas: color del líquido y de la tarjeta
+  var FAM = {
+    "Floral":["#E9A6B4","#F7E4E6","Rosas, jazmín y flores blancas. Femeninos y románticos."],
+    "Cítrica":["#E6CF6A","#F5F1D8","Limón, bergamota y frescura para el calor."],
+    "Amaderada":["#B98A5A","#EFE4D6","Cedro, sándalo y vetiver. Elegantes y cálidos."],
+    "Oriental":["#C9813A","#F3E3D0","Ámbar, vainilla y especias. Intensos para la noche."],
+    "Acuática":["#8FC3D6","#E2EFF3","Notas marinas y limpias. Frescos para el día."],
+    "Gourmand":["#9B5B3E","#F1E1D8","Vainilla, caramelo y café. Dulces y envolventes."],
+    "Aromática":["#9DB7A0","#E5EEE6","Lavanda, especias y hierbas. Frescos y masculinos."]
+  };
+  // forma: tall | round | square | oval | slim | facet ; tapa: gold | black | ball | wood | crystal
+  // Referencias reales de perfumes populares. Precios de referencia en COP: ajustar con la lista de Agua Flor.
+  // Foto: assets/img/perfumes/<id>.jpg (ej. assets/img/perfumes/dior-sauvage.jpg). Si no existe, se muestra la ilustración del frasco.
+  var P = [
+    {id:"dior-sauvage", br:"Dior", n:"Sauvage", g:"Para él", f:"Aromática", b:"Eau de Toilette", sh:"square", cap:"black", sz:{"60 ml":429000,"100 ml":569000}, best:1, d:"Fresco, especiado y magnético. Uno de los perfumes masculinos más vendidos del mundo.", nt:["Bergamota, pimienta","Lavanda, pimienta de Sichuan","Ambroxan, cedro"]},
+    {id:"ch-good-girl", br:"Carolina Herrera", n:"Good Girl", g:"Para ella", f:"Oriental", b:"Eau de Parfum", sh:"facet", cap:"black", sz:{"50 ml":429000,"80 ml":539000}, best:1, d:"Dulce y sofisticado, con almendra, café y flores blancas sobre un fondo de cacao.", nt:["Almendra, café","Tuberosa, jazmín sambac","Haba tonka, cacao"]},
+    {id:"pr-1-million", br:"Paco Rabanne", n:"1 Million", g:"Para él", f:"Oriental", b:"Eau de Toilette", sh:"square", cap:"gold", sz:{"100 ml":459000,"200 ml":619000}, best:1, d:"Especiado y seductor, ideal para la noche.", nt:["Pomelo, menta","Canela, rosa","Cuero, ámbar"]},
+    {id:"lancome-la-vie-est-belle", br:"Lancôme", n:"La Vie est Belle", g:"Para ella", f:"Gourmand", b:"Eau de Parfum", sh:"oval", cap:"crystal", sz:{"50 ml":449000,"100 ml":599000}, best:1, d:"Iris y praliné en una fragancia dulce y luminosa que se volvió un clásico.", nt:["Grosella negra, pera","Iris, jazmín, azahar","Praliné, vainilla, pachulí"]},
+    {id:"armani-acqua-di-gio", br:"Giorgio Armani", n:"Acqua di Giò", g:"Para él", f:"Acuática", b:"Eau de Toilette", sh:"slim", cap:"wood", sz:{"100 ml":489000}, s:{"100 ml":419000}, d:"Notas marinas y cítricas: frescura limpia para todos los días.", nt:["Notas marinas, bergamota","Romero, jazmín","Pachulí, cedro"]},
+    {id:"jpg-le-male", br:"Jean Paul Gaultier", n:"Le Male", g:"Para él", f:"Oriental", b:"Eau de Toilette", sh:"tall", cap:"crystal", sz:{"125 ml":479000}, d:"Lavanda, menta y vainilla en un ícono masculino.", nt:["Lavanda, menta","Canela, azahar","Vainilla, haba tonka"]},
+    {id:"ch-212-vip-rose", br:"Carolina Herrera", n:"212 VIP Rosé", g:"Para ella", f:"Floral", b:"Eau de Parfum", sh:"tall", cap:"gold", sz:{"80 ml":449000}, d:"Burbujeante y festivo, con champaña rosé y flores.", nt:["Champaña rosé, pimienta rosa","Rosa, flor de durazno","Almizcle, maderas"]},
+    {id:"ysl-libre", br:"Yves Saint Laurent", n:"Libre", g:"Para ella", f:"Floral", b:"Eau de Parfum", sh:"square", cap:"gold", sz:{"50 ml":549000,"90 ml":699000}, d:"Lavanda y azahar con un fondo cálido de vainilla.", nt:["Mandarina, lavanda","Azahar, jazmín","Vainilla, almizcle"]},
+    {id:"lattafa-yara", br:"Lattafa", n:"Yara", g:"Para ella", f:"Gourmand", b:"Eau de Parfum", ar:1, sh:"round", cap:"ball", sz:{"100 ml":169000}, s:{"100 ml":139000}, best:1, d:"El perfume árabe femenino más vendido: cremoso, frutal y dulce.", nt:["Orquídea, heliotropo, mandarina","Frutas tropicales","Vainilla, almizcle, sándalo"]},
+    {id:"lattafa-khamrah", br:"Lattafa", n:"Khamrah", g:"Unisex", f:"Oriental", b:"Eau de Parfum", ar:1, sh:"facet", cap:"gold", sz:{"100 ml":189000}, best:1, d:"Canela, dátiles y vainilla en un perfume árabe cálido y de gran estela.", nt:["Canela, nuez moscada, bergamota","Dátiles, praliné, tuberosa","Vainilla, haba tonka, ámbar"]},
+    {id:"lattafa-asad", br:"Lattafa", n:"Asad", g:"Para él", f:"Oriental", b:"Eau de Parfum", ar:1, sh:"square", cap:"black", sz:{"100 ml":169000}, d:"Especiado e intenso, con pimienta negra, tabaco y vainilla.", nt:["Pimienta negra, piña, tabaco","Café, iris, pachulí","Vainilla, ámbar, benjuí"]},
+    {id:"armaf-club-de-nuit", br:"Armaf", n:"Club de Nuit Intense Man", g:"Para él", f:"Amaderada", b:"Eau de Toilette", ar:1, sh:"tall", cap:"black", sz:{"105 ml":219000}, d:"Frutal y ahumado, con piña y abedul. De larga duración.", nt:["Piña, limón, grosella negra","Abedul, jazmín","Almizcle, ámbar gris, vainilla"]}
+  ];
+  var GENDERS=["Para ella","Para él","Unisex"];
+  var FILTERS=["Todos"].concat(GENDERS,["Árabes","Ofertas"]);
+
+  /* ===== Ilustraciones de frascos ===== */
+  var uid=0;
+  function shade(hex,amt){var n=parseInt(hex.slice(1),16),r=n>>16,g=n>>8&255,b=n&255;function f(x){return Math.max(0,Math.min(255,Math.round(amt<0?x*(1+amt):x+(255-x)*amt)));}return "#"+((1<<24)+(f(r)<<16)+(f(g)<<8)+f(b)).toString(16).slice(1);}
+  var BODY={
+    tall:{d:"M112 150 h76 a10 10 0 0 1 10 10 v176 a10 10 0 0 1 -10 10 h-76 a10 10 0 0 1 -10 -10 v-176 a10 10 0 0 1 10 -10z",neck:[136,128,28,24],liq:200},
+    slim:{d:"M122 140 h56 a8 8 0 0 1 8 8 v190 a8 8 0 0 1 -8 8 h-56 a8 8 0 0 1 -8 -8 v-190 a8 8 0 0 1 8 -8z",neck:[139,118,22,24],liq:190},
+    round:{d:"M150 156 a80 80 0 1 1 -0.1 0z",neck:[136,136,28,24],liq:240,cy:236},
+    square:{d:"M86 176 h128 a14 14 0 0 1 14 14 v134 a14 14 0 0 1 -14 14 h-128 a14 14 0 0 1 -14 -14 v-134 a14 14 0 0 1 14 -14z",neck:[134,154,32,24],liq:220},
+    oval:{d:"M150 162 C210 162 226 220 226 262 C226 314 196 344 150 344 C104 344 74 314 74 262 C74 220 90 162 150 162z",neck:[137,140,26,24],liq:236},
+    facet:{d:"M120 160 h60 l36 36 v108 l-36 36 h-60 l-36 -36 v-108z",neck:[136,138,28,24],liq:226}
+  };
+  function bottle(p,bg,opt){
+    opt=opt||{};
+    var id="b"+(++uid),fam=FAM[p.f],liq=fam[0],bd=BODY[p.sh],n=bd.neck;
+    var capCol={gold:"#C9A34E",black:"#232A2A",ball:"#C9A34E",wood:"#8A6240",crystal:"#E8F0EE"}[p.cap];
+    var defs='<linearGradient id="'+id+'g" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".18" stop-color="#fff" stop-opacity=".08"/><stop offset=".8" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".25"/></linearGradient>'+
+      '<linearGradient id="'+id+'l" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+shade(liq,.25)+'"/><stop offset="1" stop-color="'+shade(liq,-.18)+'"/></linearGradient>'+
+      '<linearGradient id="'+id+'c" x1="0" x2="1"><stop offset="0" stop-color="'+shade(capCol,.35)+'"/><stop offset=".5" stop-color="'+capCol+'"/><stop offset="1" stop-color="'+shade(capCol,-.3)+'"/></linearGradient>'+
+      '<clipPath id="'+id+'k"><path d="'+bd.d+'"/></clipPath>';
+    var cap;
+    if(p.cap==="ball")cap='<circle cx="150" cy="'+(n[1]-26)+'" r="30" fill="url(#'+id+'c)"/>';
+    else if(p.cap==="black")cap='<rect x="118" y="'+(n[1]-58)+'" width="64" height="62" rx="3" fill="url(#'+id+'c)"/>';
+    else if(p.cap==="wood")cap='<rect x="124" y="'+(n[1]-66)+'" width="52" height="70" rx="6" fill="url(#'+id+'c)"/>';
+    else if(p.cap==="crystal")cap='<path d="M150 '+(n[1]-74)+' l30 40 l-30 36 l-30 -36z" fill="url(#'+id+'c)" stroke="#fff" stroke-opacity=".6"/>';
+    else cap='<rect x="126" y="'+(n[1]-52)+'" width="48" height="56" rx="2" fill="url(#'+id+'c)"/><rect x="126" y="'+(n[1]-14)+'" width="48" height="5" fill="#000" opacity=".12"/>';
+    var g='<g class="'+(opt.cls||"")+'">'+
+      '<ellipse cx="150" cy="352" rx="78" ry="8" fill="#000" opacity=".08"/>'+
+      '<rect x="'+n[0]+'" y="'+n[1]+'" width="'+n[2]+'" height="'+n[3]+'" fill="#E9EFEE" opacity=".9"/>'+cap+
+      '<path d="'+bd.d+'" fill="#fff" fill-opacity=".35"/>'+
+      '<g clip-path="url(#'+id+'k)"><rect x="60" y="'+bd.liq+'" width="180" height="200" fill="url(#'+id+'l)" opacity=".92"/><path d="M60 '+bd.liq+' q22 -6 45 0 t45 0 t45 0 t45 0" fill="'+shade(liq,.35)+'" opacity=".7"/></g>'+
+      '<path d="'+bd.d+'" fill="url(#'+id+'g)"/>'+
+      '<path d="'+bd.d+'" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="2"/>'+
+      (opt.label===false?'':'<rect x="122" y="'+(bd.liq+26)+'" width="56" height="30" fill="#fff" fill-opacity=".85"/><rect x="132" y="'+(bd.liq+37)+'" width="36" height="3" fill="#16201F" opacity=".55"/><rect x="138" y="'+(bd.liq+44)+'" width="24" height="2" fill="#16201F" opacity=".35"/>')+
+      '</g>';
+    if(opt.raw)return {defs:defs,g:g};
+    return '<svg viewBox="0 0 300 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs>'+defs+'</defs><rect width="300" height="380" fill="'+(bg||fam[1])+'"/>'+g+'</svg>';
+  }
+  function heroArt(){
+    var picks=[["lattafa-khamrah",-150,40,.95],["lattafa-yara",0,0,1.12],["armani-acqua-di-gio",150,30,.95]];
+    var defs="",gs="";
+    picks.forEach(function(k){var r=bottle(byId(k[0]),null,{raw:true,label:false});defs+=r.defs;gs+='<g class="floaty"><g transform="translate('+(250+k[1])+' '+(70+k[2])+') scale('+k[3]+')">'+r.g+'</g></g>';});
+    var petals="";[[120,120,"#F4C6CC"],[640,90,"#F7D3D7"],[700,330,"#F4C6CC"],[90,380,"#F7D3D7"],[560,460,"#EFB8C0"]].forEach(function(p,i){petals+='<path class="petal" style="transform-origin:'+p[0]+'px '+p[1]+'px;animation-delay:-'+i*2+'s" d="M'+p[0]+' '+p[1]+' q18 -22 34 0 q-16 22 -34 0z" fill="'+p[2]+'"/>';});
+    return '<svg viewBox="0 0 800 560" preserveAspectRatio="xMidYMid slice"><defs>'+defs+'</defs><rect x="-400" y="-300" width="1600" height="1200" fill="#CFE7E2"/><circle cx="400" cy="270" r="230" fill="#BFDDD7"/><path d="M-200 470 Q400 440 1000 470 V900 H-200z" fill="#B3D5CE"/><rect x="215" y="440" width="370" height="24" fill="#E9F2EF"/><rect x="235" y="464" width="330" height="70" fill="#DCEBE7"/>'+petals+gs+'</svg>';
+  }
+  function byId(id){for(var i=0;i<P.length;i++)if(P[i].id===id)return P[i];}
+
+  /* ===== Utilidades ===== */
+  function money(v){return "$"+v.toLocaleString("es-CO").replace(/,/g,".");}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+  function sizes(p){return Object.keys(p.sz);}
+  function unit(p,z){return (p.s&&p.s[z])||p.sz[z];}
+  function from(p){var z=sizes(p)[0];return {now:unit(p,z),old:p.s&&p.s[z]?p.sz[z]:0};}
+  function isArab(p){return !!p.ar;}
+  function full(p){return p.br+" "+p.n;}
+  function media(p,bg){return bottle(p,bg)+'<img class="photo" src="'+(IMGS[p.id]||"assets/img/perfumes/"+p.id+".jpg")+'" alt="'+esc(full(p))+'" loading="lazy" onerror="this.remove()">';}
+  function priceHTML(p,z){var now=z?unit(p,z):from(p).now,old=z?(p.s&&p.s[z]?p.sz[z]:0):from(p).old;return (old?'<span class="price now-sale">'+money(now)+'</span><span class="price old">'+money(old)+'</span>':'<span class="price">'+money(now)+'</span>');}
+  function card(p){
+    var multi=sizes(p).length>1;
+    return '<article class="card"><button class="card-img" type="button" data-open="'+p.id+'" aria-label="Ver '+esc(p.n)+'">'+media(p)+(p.s?'<span class="tag sale">Oferta</span>':(isArab(p)?'<span class="tag">Árabe</span>':''))+'</button>'+
+      '<span class="card-brand">'+esc(p.br)+' · '+esc(p.g)+'</span><button class="card-name" type="button" data-open="'+p.id+'">'+esc(p.n)+'</button>'+
+      '<span class="card-notes">'+esc(p.f)+' · '+esc(p.nt[1])+'</span><div class="card-meta">'+(multi?'<span class="muted" style="font-size:.86rem">Desde</span>':'')+priceHTML(p)+'</div></article>';
+  }
+
+  /* ===== Inicio ===== */
+  document.getElementById("heroArt").innerHTML=heroArt();
+  var gArt={"Para ella":["ch-good-girl","#F4D9D3"],"Para él":["dior-sauvage","#DCE6E3"],"Unisex":["lattafa-khamrah","#EFE4D6"]};
+  document.getElementById("genders").innerHTML=GENDERS.map(function(g){return '<a class="gender" href="#tienda" data-filter="'+g+'">'+media(byId(gArt[g][0]),gArt[g][1])+'<span>'+g+'</span></a>';}).join("");
+  document.getElementById("bestList").innerHTML=P.filter(function(p){return p.best;}).slice(0,4).map(card).join("");
+  document.getElementById("families").innerHTML=["Floral","Oriental","Gourmand","Acuática"].map(function(f){return '<a class="fam" href="#tienda" data-fam="'+f+'"><span class="drop" style="background:'+FAM[f][0]+'"></span><h3>'+f+'</h3><p>'+FAM[f][2]+'</p></a>';}).join("");
+
+  /* ===== Tienda ===== */
+  var state={f:"Todos",fam:"",q:"",sort:"rel"};
+  var chipsEl=document.getElementById("chips"),famSel=document.getElementById("fam");
+  chipsEl.innerHTML=FILTERS.map(function(c){return '<button class="chip" type="button" data-chip="'+c+'" aria-pressed="false">'+c+'</button>';}).join("");
+  famSel.innerHTML+=Object.keys(FAM).map(function(f){return '<option>'+f+'</option>';}).join("");
+  function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");}
+  function renderShop(){
+    var list=P.filter(function(p){
+      var okF=state.f==="Todos"||(state.f==="Ofertas"?!!p.s:state.f==="Árabes"?isArab(p):p.g===state.f);
+      var okFam=!state.fam||p.f===state.fam;
+      var okQ=!state.q||norm(p.br+" "+p.n+" "+p.f+" "+p.nt.join(" ")+" "+p.b).indexOf(state.q)>-1;
+      return okF&&okFam&&okQ;
+    });
+    if(state.sort!=="rel")list=list.slice().sort(function(a,b){return state.sort==="asc"?from(a).now-from(b).now:from(b).now-from(a).now;});
+    document.getElementById("shopList").innerHTML=list.map(card).join("");
+    document.getElementById("shopEmpty").hidden=list.length>0;
+    chipsEl.querySelectorAll(".chip").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-chip")===state.f?"true":"false");});
+    famSel.value=state.fam;
+  }
+  chipsEl.addEventListener("click",function(e){var b=e.target.closest("[data-chip]");if(!b)return;state.f=b.getAttribute("data-chip");renderShop();});
+  famSel.addEventListener("change",function(){state.fam=famSel.value;renderShop();});
+  document.getElementById("search").addEventListener("input",function(e){state.q=norm(e.target.value.trim());renderShop();});
+  document.getElementById("sort").addEventListener("change",function(e){state.sort=e.target.value;renderShop();});
+  document.addEventListener("click",function(e){
+    var a=e.target.closest("[data-filter]");if(a){state.f=a.getAttribute("data-filter");state.fam="";state.q="";document.getElementById("search").value="";renderShop();}
+    var fm=e.target.closest("[data-fam]");if(fm){state.f="Todos";state.fam=fm.getAttribute("data-fam");state.q="";document.getElementById("search").value="";renderShop();}
+    var s=e.target.closest("[data-focus-search]");if(s)setTimeout(function(){document.getElementById("search").focus();},60);
+  });
+  renderShop();
+
+  /* ===== Router ===== */
+  var pages=[].slice.call(document.querySelectorAll(".page")),names=pages.map(function(p){return p.getAttribute("data-page");});
+  var links=document.getElementById("navLinks"),tog=document.querySelector(".menu-toggle");
+  function route(){
+    var h=location.hash.replace("#","");if(names.indexOf(h)<0)h="inicio";
+    pages.forEach(function(p){var on=p.getAttribute("data-page")===h;p.classList.toggle("is-active",on);if(on)document.title=p.getAttribute("data-title");});
+    document.querySelectorAll("[data-nav]").forEach(function(a){if(a.getAttribute("data-nav")===h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
+    links.classList.remove("open");tog.setAttribute("aria-expanded","false");window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange",route);route();
+  tog.addEventListener("click",function(){var o=links.classList.toggle("open");tog.setAttribute("aria-expanded",o?"true":"false");tog.setAttribute("aria-label",o?"Cerrar menú":"Abrir menú");});
+
+  /* ===== Ficha ===== */
+  var pd=document.getElementById("pd"),cur=null,sel={z:null,q:1};
+  function drawPd(){
+    document.getElementById("pdPrice").innerHTML=priceHTML(cur,sel.z);
+    document.getElementById("pdSizes").innerHTML=sizes(cur).map(function(z){return '<button type="button" class="size" role="radio" aria-checked="'+(z===sel.z)+'" data-size="'+z+'">'+z+'</button>';}).join("");
+    document.getElementById("qVal").textContent=sel.q;
+  }
+  function openPd(id){
+    cur=byId(id);var zs=sizes(cur);sel={z:zs.length===1?zs[0]:null,q:1};
+    document.getElementById("pdArt").innerHTML=media(cur);
+    document.getElementById("pdName").textContent=cur.n;
+    document.getElementById("pdBrand").textContent=cur.br;
+    document.getElementById("pdMeta").textContent=cur.g+" · "+cur.b+" · Familia "+cur.f.toLowerCase();
+    document.getElementById("pdDesc").textContent=cur.d;
+    document.getElementById("pdNotes").innerHTML=["Salida","Corazón","Fondo"].map(function(t,i){return '<div><dt>'+t+'</dt><dd style="margin:0">'+esc(cur.nt[i])+'</dd></div>';}).join("");
+    document.getElementById("pdErr").textContent="";
+    drawPd();pd.showModal();
+  }
+  document.addEventListener("click",function(e){var b=e.target.closest("[data-open]");if(b)openPd(b.getAttribute("data-open"));});
+  pd.addEventListener("click",function(e){
+    var t=e.target;
+    if(t===pd||t.closest("[data-close]")){pd.close();return;}
+    var z=t.closest("[data-size]");if(z){sel.z=z.getAttribute("data-size");document.getElementById("pdErr").textContent="";drawPd();}
+  });
+  document.getElementById("qMinus").onclick=function(){if(sel.q>1){sel.q--;document.getElementById("qVal").textContent=sel.q;}};
+  document.getElementById("qPlus").onclick=function(){if(sel.q<10){sel.q++;document.getElementById("qVal").textContent=sel.q;}};
+  document.getElementById("addBtn").onclick=function(){
+    if(!sel.z){document.getElementById("pdErr").textContent="Elige la presentación para agregar el perfume.";return;}
+    addToCart(cur.id,sel.z,sel.q);pd.close();toast(full(cur)+" agregado a tu bolsa");
+  };
+
+  /* ===== Bolsa ===== */
+  var KEY="aguaflor-demo-bolsa-v2",cart=[];
+  try{cart=JSON.parse(localStorage.getItem(KEY)||"[]")||[];}catch(e){cart=[];}
+  cart=cart.filter(function(l){var p=byId(l.id);return p&&p.sz[l.z];});
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(cart));}catch(e){}}
+  function addToCart(id,z,q){var f=cart.filter(function(l){return l.id===id&&l.z===z;})[0];if(f)f.q=Math.min(10,f.q+q);else cart.push({id:id,z:z,q:q});save();renderCart();}
+  function renderCart(){
+    var n=cart.reduce(function(a,l){return a+l.q;},0),tot=cart.reduce(function(a,l){return a+unit(byId(l.id),l.z)*l.q;},0);
+    var b=document.getElementById("cartCount");b.textContent=n;b.hidden=n===0;
+    document.getElementById("cartTotal").textContent=money(tot);
+    document.getElementById("checkout").style.display=cart.length?"":"none";
+    var body=document.getElementById("cartBody");
+    if(!cart.length){body.innerHTML='<div class="cart-empty"><p>Tu bolsa está vacía.</p><a class="btn btn-deep" href="#tienda" data-close-cart>Ver perfumes</a></div>';return;}
+    body.innerHTML=cart.map(function(l,i){var p=byId(l.id);return '<div class="line"><div class="thumb">'+media(p)+'</div><div><h3>'+esc(full(p))+'</h3><small>'+l.z+' · '+esc(p.b)+'</small><div class="qty" style="margin-top:.5rem"><button type="button" data-dec="'+i+'" aria-label="Quitar una">−</button><span>'+l.q+'</span><button type="button" data-inc="'+i+'" aria-label="Agregar una">+</button></div><button class="rm" type="button" data-rm="'+i+'">Eliminar</button></div><span class="price">'+money(unit(p,l.z)*l.q)+'</span></div>';}).join("");
+  }
+  var cartDlg=document.getElementById("cart");
+  document.getElementById("openCart").onclick=function(){tEl.classList.remove("show");renderCart();cartDlg.showModal();};
+  cartDlg.addEventListener("click",function(e){
+    var t=e.target,i;
+    if(t===cartDlg||t.closest("[data-close]")||t.closest("[data-close-cart]")){cartDlg.close();return;}
+    if(t.closest("[data-inc]")){i=+t.closest("[data-inc]").getAttribute("data-inc");cart[i].q=Math.min(10,cart[i].q+1);}
+    else if(t.closest("[data-dec]")){i=+t.closest("[data-dec]").getAttribute("data-dec");cart[i].q--;if(cart[i].q<1)cart.splice(i,1);}
+    else if(t.closest("[data-rm]")){i=+t.closest("[data-rm]").getAttribute("data-rm");cart.splice(i,1);}
+    else return;
+    save();renderCart();
+  });
+  var co=document.getElementById("checkout");
+  co.addEventListener("submit",function(e){
+    e.preventDefault();
+    var err=document.getElementById("coErr"),nom=co.nombre.value.trim(),ciu=co.ciudad.value.trim();
+    if(!nom){err.textContent="Escribe tu nombre para enviar el pedido.";co.nombre.focus();return;}
+    if(!ciu){err.textContent="Escribe la ciudad de envío.";co.ciudad.focus();return;}
+    err.textContent="";
+    var tot=0,lines=cart.map(function(l){var p=byId(l.id),st=unit(p,l.z)*l.q;tot+=st;return "• "+l.q+" x "+full(p)+" ("+p.b+", "+l.z+") — "+money(st);});
+    var msg="¡Hola "+STORE+"! Quiero hacer este pedido:\n\n"+lines.join("\n")+"\n\nTotal: "+money(tot)+"\nCiudad: "+ciu+"\nPara regalo: "+co.regalo.value+"\nNombre: "+nom;
+    window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg),"_blank","noopener");
+  });
+  document.querySelectorAll("[data-wa-general]").forEach(function(a){a.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent("¡Hola "+STORE+"! Quiero asesoría para elegir un perfume.");a.target="_blank";a.rel="noopener";});
+  renderCart();
+
+  var tEl=document.getElementById("toast"),tt;
+  function toast(m){document.getElementById("toastMsg").textContent=m;tEl.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){tEl.classList.remove("show");},3200);}
+  document.getElementById("toastBtn").onclick=function(){tEl.classList.remove("show");renderCart();cartDlg.showModal();};
+})();
+</script>
+</body>
+</html>
